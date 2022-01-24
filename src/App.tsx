@@ -1,7 +1,7 @@
-import { greet } from "./utils/greet";
+import FetchClues from "./components/FetchClues";
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return <FetchClues />;
 }
 
 export default App;
