@@ -52,6 +52,7 @@ export default function DisplayGrid({
       clues: [clue41, clue42, clue43, clue44],
     },
   ];
+  console.log(groups);
 
   const clues = [
     clue11,
