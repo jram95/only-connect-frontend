@@ -56,7 +56,6 @@ export default function DisplayGrid({
       clues: [clue41, clue42, clue43, clue44],
     },
   ];
-  console.log(groups);
 
   const clues = [
     clue11,
@@ -77,10 +76,18 @@ export default function DisplayGrid({
     clue44,
   ];
 
+  const shuffledClues = shuffle(clues);
+
   return (
     <>
       <h1>Hi</h1>
-      <p>{shuffle(clues)}</p>
+      <div className="game-grid">
+        {shuffledClues.map((clue) => (
+          <div className="grid-cell" key={clue}>
+            <button>{clue}</button>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
