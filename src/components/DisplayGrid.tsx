@@ -1,5 +1,8 @@
 import CluesProps from "./CluesProps";
 import shuffle from "../utils/shuffle";
+import isInGroup from "../utils/isInGroup";
+import hasSameGroup from "../utils/hasSameGroup";
+import { useState } from "react";
 
 export default function DisplayGrid({
   id,
@@ -30,6 +33,7 @@ export default function DisplayGrid({
   connection4,
   explanation4,
 }: CluesProps): JSX.Element {
+  const [selectedClues, getSelectedClues] = useState<string[]>([]);
   const groups = [
     {
       connection: connection1,
