@@ -36,30 +36,45 @@ export default function DisplayGrid({
   const [shuffledClues, setShuffledClues] = useState<string[]>([]);
   const [selectedClues, setSelectedClues] = useState<string[]>([]);
 
-  const groups = [
-    {
-      connection: connection1,
-      explanation: explanation1,
-      clues: [clue11, clue12, clue13, clue14],
-    },
-    {
-      connection: connection2,
-      explanation: explanation2,
-      clues: [clue21, clue22, clue23, clue24],
-    },
-    {
-      connection: connection3,
-      explanation: explanation3,
-      clues: [clue31, clue32, clue33, clue34],
-    },
-    {
-      connection: connection4,
-      explanation: explanation4,
-      clues: [clue41, clue42, clue43, clue44],
-    },
-  ];
-
-  const clues = [
+  useEffect(() => {
+    const groups = [
+      {
+        connection: connection1,
+        explanation: explanation1,
+        clues: [clue11, clue12, clue13, clue14],
+      },
+      {
+        connection: connection2,
+        explanation: explanation2,
+        clues: [clue21, clue22, clue23, clue24],
+      },
+      {
+        connection: connection3,
+        explanation: explanation3,
+        clues: [clue31, clue32, clue33, clue34],
+      },
+      {
+        connection: connection4,
+        explanation: explanation4,
+        clues: [clue41, clue42, clue43, clue44],
+      },
+    ];
+    if (
+      selectedClues.length === 4 &&
+      hasSameGroup(selectedClues, groups) === false
+    ) {
+      selectedClues.filter((clue) => clue.length === 0);
+    }
+  }, [
+    selectedClues,
+    connection1,
+    connection2,
+    connection3,
+    connection4,
+    explanation1,
+    explanation2,
+    explanation3,
+    explanation4,
     clue11,
     clue12,
     clue13,
@@ -76,20 +91,46 @@ export default function DisplayGrid({
     clue42,
     clue43,
     clue44,
-  ];
+  ]);
 
   useEffect(() => {
-    if (
-      selectedClues.length === 4 &&
-      hasSameGroup(selectedClues, groups) === false
-    ) {
-      selectedClues.filter((clue) => clue.length === 0);
-    }
-  }, [selectedClues, groups]);
-
-  useEffect(() => {
+    const clues = [
+      clue11,
+      clue12,
+      clue13,
+      clue14,
+      clue21,
+      clue22,
+      clue23,
+      clue24,
+      clue31,
+      clue32,
+      clue33,
+      clue34,
+      clue41,
+      clue42,
+      clue43,
+      clue44,
+    ];
     setShuffledClues(shuffle(clues));
-  }, [clues]);
+  }, [
+    clue11,
+    clue12,
+    clue13,
+    clue14,
+    clue21,
+    clue22,
+    clue23,
+    clue24,
+    clue31,
+    clue32,
+    clue33,
+    clue34,
+    clue41,
+    clue42,
+    clue43,
+    clue44,
+  ]);
 
   return (
     <>
