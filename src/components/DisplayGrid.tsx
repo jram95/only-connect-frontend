@@ -1,7 +1,7 @@
 import CluesProps from "./CluesProps";
 import shuffle from "../utils/shuffle";
 import hasSameGroup from "../utils/hasSameGroup";
-import { MouseEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Buttons from "./Buttons";
 
 export default function DisplayGrid({
@@ -85,11 +85,11 @@ export default function DisplayGrid({
     ) {
       selectedClues.filter((clue) => clue.length === 0);
     }
-  }, [selectedClues]);
+  }, [selectedClues, groups]);
 
   useEffect(() => {
     setShuffledClues(shuffle(clues));
-  }, []);
+  }, [clues]);
 
   return (
     <>
