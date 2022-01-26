@@ -1,12 +1,21 @@
 body {
-  background-color: #89caf3;
+  background-color: #a8b9eb;
+}
+
+.wall-title {
+  margin: auto;
+  padding: 13px;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-style: bold;
 }
 
 .game-container {
   display: grid;
   margin: auto;
-  padding: 80px 0;
-  color: rgb(43, 108, 184);
+  padding: 120px 0;
+  color: rgb(143, 184, 231);
+  background-color: #1b2e63;
 }
 
 .game-grid {
@@ -17,6 +26,10 @@ body {
   grid-template-rows: 80px 80px 80px 80px;
   border: 5px solid;
   padding: 7px;
+  padding-bottom: 2px;
+  padding-right: 3px;
+  border-radius: 8px;
+  color: rgb(4, 4, 39);
 
   /* width: 300px;
   height: 300px; */
@@ -30,11 +43,6 @@ body {
   padding: 20px;
 } */
 
-.center-grid {
-  width: 50vw;
-  height: 100vh;
-  border: 1px solid red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.button-clue {
+  border-radius: 8px;
 }

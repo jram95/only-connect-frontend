@@ -1,8 +1,8 @@
 import CluesProps from "./CluesProps";
 import shuffle from "../utils/shuffle";
-import isInGroup from "../utils/isInGroup";
 import hasSameGroup from "../utils/hasSameGroup";
 import { MouseEvent, useEffect, useState } from "react";
+import Buttons from "./Buttons";
 
 export default function DisplayGrid({
   id,
@@ -35,7 +35,6 @@ export default function DisplayGrid({
 }: CluesProps): JSX.Element {
   const [shuffledClues, setShuffledClues] = useState<string[]>([]);
   const [selectedClues, setSelectedClues] = useState<string[]>([]);
-  const [highlightButton, setHighlightButton] = useState<boolean>(false);
 
   const groups = [
     {
@@ -88,43 +87,20 @@ export default function DisplayGrid({
     }
   }, [selectedClues]);
 
-  function handleClick(clue: string) {
-    setHighlightButton(true);
-    if (selectedClues.length === 0) {
-      setSelectedClues([clue]);
-    } else {
-      setSelectedClues([...selectedClues, clue]);
-    }
-  }
-
   useEffect(() => {
     setShuffledClues(shuffle(clues));
   }, []);
 
   return (
     <>
-      <div className="game-container">
-        <div className="game-grid">
-          {shuffledClues.map((clue) => (
-            <div className="grid-button" key={clue}>
-              <button
-                onClick={() => handleClick(clue)}
-                style={{
-                  fontSize: "large",
-                  backgroundColor:
-                    highlightButton === true ? "rgb(43, 108, 184)" : "",
-                  padding: "20px",
-                  width: "96px",
-                  height: "73px",
-                  border: "1px solid",
-                }}
-              >
-                {clue}
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Buttons
+        shuffledClues={shuffledClues}
+        setSelectedClues={setSelectedClues}
+        selectedClues={selectedClues}
+      />
+      <p>
+        Submitted by {user} at {submit_time}
+      </p>
     </>
   );
 }
