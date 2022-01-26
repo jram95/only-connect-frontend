@@ -2,7 +2,7 @@ import CluesProps from "./CluesProps";
 import shuffle from "../utils/shuffle";
 import isInGroup from "../utils/isInGroup";
 import hasSameGroup from "../utils/hasSameGroup";
-import { useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 
 export default function DisplayGrid({
   id,
@@ -33,7 +33,7 @@ export default function DisplayGrid({
   connection4,
   explanation4,
 }: CluesProps): JSX.Element {
-  const [selectedClues, getSelectedClues] = useState<string[]>([]);
+  const [selectedClues, setSelectedClues] = useState<string[]>([]);
   const groups = [
     {
       connection: connection1,
@@ -77,6 +77,20 @@ export default function DisplayGrid({
   ];
 
   const shuffledClues: string[] = shuffle(clues);
+  console.log(shuffledClues);
+
+  function handleClick(clue: string) {
+    if (selectedClues.length === 0) {
+      setSelectedClues([clue]);
+      console.log(selectedClues);
+    } else {
+      setSelectedClues([...selectedClues, clue]);
+      console.log(selectedClues);
+      if (selectedClues.length === 4) {
+        console.log(selectedClues);
+      }
+    }
+  }
 
   return (
     <>
@@ -84,7 +98,7 @@ export default function DisplayGrid({
         <div className="game-grid">
           {shuffledClues.map((clue) => (
             <div className="grid-button" key={clue}>
-              <button>{clue}</button>
+              <button onClick={() => handleClick(clue)}>{clue}</button>
             </div>
           ))}
         </div>
