@@ -33,7 +33,10 @@ export default function DisplayGrid({
   connection4,
   explanation4,
 }: CluesProps): JSX.Element {
+  const [shuffledClues, setShuffledClues] = useState<string[]>([]);
   const [selectedClues, setSelectedClues] = useState<string[]>([]);
+  const [highlightButton, setHighlightButton] = useState<boolean>(false);
+
   const groups = [
     {
       connection: connection1,
@@ -76,21 +79,27 @@ export default function DisplayGrid({
     clue44,
   ];
 
-  const shuffledClues: string[] = shuffle(clues);
-  console.log(shuffledClues);
+  useEffect(() => {
+    if (
+      selectedClues.length === 4 &&
+      hasSameGroup(selectedClues, groups) === false
+    ) {
+      selectedClues.filter((clue) => clue.length === 0);
+    }
+  }, [selectedClues]);
 
   function handleClick(clue: string) {
+    setHighlightButton(true);
     if (selectedClues.length === 0) {
       setSelectedClues([clue]);
-      console.log(selectedClues);
     } else {
       setSelectedClues([...selectedClues, clue]);
-      console.log(selectedClues);
-      if (selectedClues.length === 4) {
-        console.log(selectedClues);
-      }
     }
   }
+
+  useEffect(() => {
+    setShuffledClues(shuffle(clues));
+  }, []);
 
   return (
     <>
@@ -98,7 +107,20 @@ export default function DisplayGrid({
         <div className="game-grid">
           {shuffledClues.map((clue) => (
             <div className="grid-button" key={clue}>
-              <button onClick={() => handleClick(clue)}>{clue}</button>
+              <button
+                onClick={() => handleClick(clue)}
+                style={{
+                  fontSize: "large",
+                  backgroundColor:
+                    highlightButton === true ? "rgb(43, 108, 184)" : "",
+                  padding: "20px",
+                  width: "96px",
+                  height: "73px",
+                  border: "1px solid",
+                }}
+              >
+                {clue}
+              </button>
             </div>
           ))}
         </div>
