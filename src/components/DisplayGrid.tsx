@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Buttons from "./Buttons";
 import removeClues from "../utils/removeClues";
 import SquaresAndButtons from "./SquaresAndButtons";
+import SolvedWall from "./SolvedWall";
 
 export default function DisplayGrid({
   id,
@@ -38,6 +39,29 @@ export default function DisplayGrid({
   const [shuffledClues, setShuffledClues] = useState<string[]>([]);
   const [selectedClues, setSelectedClues] = useState<string[]>([]);
   const [correctClues, setCorrectClues] = useState<string[]>([]);
+
+  const groups = [
+    {
+      connection: connection1,
+      explanation: explanation1,
+      clues: [clue11, clue12, clue13, clue14],
+    },
+    {
+      connection: connection2,
+      explanation: explanation2,
+      clues: [clue21, clue22, clue23, clue24],
+    },
+    {
+      connection: connection3,
+      explanation: explanation3,
+      clues: [clue31, clue32, clue33, clue34],
+    },
+    {
+      connection: connection4,
+      explanation: explanation4,
+      clues: [clue41, clue42, clue43, clue44],
+    },
+  ];
 
   useEffect(() => {
     const groups = [
@@ -79,6 +103,9 @@ export default function DisplayGrid({
         setCorrectClues([...correctClues, ...selectedClues]);
       }
       setSelectedClues([]);
+      if (correctClues.length === 12) {
+        setCorrectClues([...correctClues, ...shuffledClues]);
+      }
     }
   }, [
     correctClues,
@@ -151,7 +178,9 @@ export default function DisplayGrid({
 
   return (
     <>
-      {shuffledClues.length === 0 ? (
+      {correctClues.length === 16 ? (
+        <SolvedWall correctClues={correctClues} groups={groups} />
+      ) : shuffledClues.length === 0 ? (
         <Buttons
           shuffledClues={shuffledClues}
           setSelectedClues={setSelectedClues}
