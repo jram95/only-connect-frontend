@@ -3,7 +3,6 @@ import axios from "axios";
 import CluesProps from "./CluesProps";
 import DisplayGrid from "./DisplayGrid";
 
-const apiBaseURL = process.env.REACT_APP_API_BASE;
 const clue_id = 2;
 
 export default function FetchClues(): JSX.Element {
