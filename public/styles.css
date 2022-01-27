@@ -36,14 +36,16 @@ body {
   height: 300px; */
 }
 
-/* .grid-button {
-  width: 96px;
-  height: 73px;
-  border: 2px solid;
-  box-sizing: border-box;
-  padding: 20px;
-} */
-
 .button-clue {
   border-radius: 8px;
+}
+
+.connections-container {
+  margin: auto;
+  font-size: 30px;
+}
+
+h3 {
+  align-items: center;
+  justify-content: center;
 }
