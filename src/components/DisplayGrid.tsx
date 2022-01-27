@@ -3,6 +3,8 @@ import shuffle from "../utils/shuffle";
 import hasSameGroup from "../utils/hasSameGroup";
 import { useEffect, useState } from "react";
 import Buttons from "./Buttons";
+import removeClues from "../utils/removeClues";
+import SquaresAndButtons from "./SquaresAndButtons";
 
 export default function DisplayGrid({
   id,
@@ -35,6 +37,8 @@ export default function DisplayGrid({
 }: CluesProps): JSX.Element {
   const [shuffledClues, setShuffledClues] = useState<string[]>([]);
   const [selectedClues, setSelectedClues] = useState<string[]>([]);
+  const [remainingClues, setRemainingClues] = useState<string[]>([]);
+  const [correctClues, setCorrectClues] = useState<string[]>([]);
 
   useEffect(() => {
     const groups = [
@@ -63,9 +67,18 @@ export default function DisplayGrid({
       selectedClues.length === 4 &&
       hasSameGroup(selectedClues, groups) === false
     ) {
-      selectedClues.filter((clue) => clue.length === 0);
+      setSelectedClues([]);
+    }
+    if (
+      selectedClues.length === 4 &&
+      hasSameGroup(selectedClues, groups) === true
+    ) {
+      setRemainingClues(shuffle(removeClues(selectedClues, shuffledClues)));
+      setCorrectClues(selectedClues);
+      setSelectedClues([]);
     }
   }, [
+    shuffledClues,
     selectedClues,
     connection1,
     connection2,
@@ -134,11 +147,20 @@ export default function DisplayGrid({
 
   return (
     <>
-      <Buttons
-        shuffledClues={shuffledClues}
-        setSelectedClues={setSelectedClues}
-        selectedClues={selectedClues}
-      />
+      {remainingClues.length === 0 ? (
+        <Buttons
+          shuffledClues={shuffledClues}
+          setSelectedClues={setSelectedClues}
+          selectedClues={selectedClues}
+        />
+      ) : (
+        <SquaresAndButtons
+          setSelectedClues={setSelectedClues}
+          selectedClues={selectedClues}
+          remainingClues={remainingClues}
+          correctClues={correctClues}
+        />
+      )}
       <p>
         Submitted by {user} at {submit_time}
       </p>
