@@ -37,7 +37,6 @@ export default function DisplayGrid({
 }: CluesProps): JSX.Element {
   const [shuffledClues, setShuffledClues] = useState<string[]>([]);
   const [selectedClues, setSelectedClues] = useState<string[]>([]);
-  const [remainingClues, setRemainingClues] = useState<string[]>([]);
   const [correctClues, setCorrectClues] = useState<string[]>([]);
 
   useEffect(() => {
@@ -73,11 +72,16 @@ export default function DisplayGrid({
       selectedClues.length === 4 &&
       hasSameGroup(selectedClues, groups) === true
     ) {
-      setRemainingClues(shuffle(removeClues(selectedClues, shuffledClues)));
-      setCorrectClues(selectedClues);
+      setShuffledClues(shuffle(removeClues(selectedClues, shuffledClues)));
+      if (correctClues.length === 0) {
+        setCorrectClues(selectedClues);
+      } else {
+        setCorrectClues([...correctClues, ...selectedClues]);
+      }
       setSelectedClues([]);
     }
   }, [
+    correctClues,
     shuffledClues,
     selectedClues,
     connection1,
@@ -147,7 +151,7 @@ export default function DisplayGrid({
 
   return (
     <>
-      {remainingClues.length === 0 ? (
+      {shuffledClues.length === 0 ? (
         <Buttons
           shuffledClues={shuffledClues}
           setSelectedClues={setSelectedClues}
@@ -157,7 +161,7 @@ export default function DisplayGrid({
         <SquaresAndButtons
           setSelectedClues={setSelectedClues}
           selectedClues={selectedClues}
-          remainingClues={remainingClues}
+          shuffledClues={shuffledClues}
           correctClues={correctClues}
         />
       )}
