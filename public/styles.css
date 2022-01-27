@@ -1,5 +1,5 @@
 body {
-  background-color: #a8b9eb;
+  background-color: #1b2e63;
 }
 
 .wall-title {
@@ -13,9 +13,10 @@ body {
 .game-container {
   display: grid;
   margin: auto;
-  padding: 120px 0;
+  padding: 100px 0;
   color: rgb(143, 184, 231);
   background-color: #1b2e63;
+  padding-bottom: 20px;
 }
 
 .game-grid {
@@ -35,14 +36,16 @@ body {
   height: 300px; */
 }
 
-/* .grid-button {
-  width: 96px;
-  height: 73px;
-  border: 2px solid;
-  box-sizing: border-box;
-  padding: 20px;
-} */
-
 .button-clue {
   border-radius: 8px;
+}
+
+.connections-container {
+  margin: auto;
+  font-size: 30px;
+}
+
+h3 {
+  align-items: center;
+  justify-content: center;
 }

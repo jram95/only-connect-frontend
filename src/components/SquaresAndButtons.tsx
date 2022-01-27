@@ -3,7 +3,7 @@ import SquaresAndButtonsProps from "./SquaresProps";
 export default function SquaresAndButtons({
   setSelectedClues,
   selectedClues,
-  remainingClues,
+  shuffledClues,
   correctClues,
 }: SquaresAndButtonsProps): JSX.Element {
   const darkBlue = "rgb(43, 108, 184)";
@@ -40,7 +40,7 @@ export default function SquaresAndButtons({
               </button>
             </div>
           ))}
-          {remainingClues.map((clue, index) => (
+          {shuffledClues.map((clue, index) => (
             <div className="grid-button" key={index}>
               {selectedClues.includes(clue) ? (
                 <button
