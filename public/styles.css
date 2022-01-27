@@ -1,5 +1,5 @@
 body {
-  background-color: #a8b9eb;
+  background-color: #1b2e63;
 }
 
 .wall-title {
@@ -13,9 +13,10 @@ body {
 .game-container {
   display: grid;
   margin: auto;
-  padding: 120px 0;
+  padding: 100px 0;
   color: rgb(143, 184, 231);
   background-color: #1b2e63;
+  padding-bottom: 20px;
 }
 
 .game-grid {
