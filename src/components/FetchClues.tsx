@@ -4,7 +4,7 @@ import CluesProps from "./CluesProps";
 import DisplayGrid from "./DisplayGrid";
 
 const apiBaseURL = process.env.REACT_APP_API_BASE;
-const clue_id = 1;
+const clue_id = 2;
 
 export default function FetchClues(): JSX.Element {
   const [wall, getWall] = useState<CluesProps>();
@@ -14,7 +14,9 @@ export default function FetchClues(): JSX.Element {
 
   async function getClues() {
     try {
-      const response = await axios.get(`${apiBaseURL}wall/${clue_id}`);
+      const response = await axios.get(
+        `https://wall-game.herokuapp.com/wall/${clue_id}`
+      );
       getWall(response.data.clues[0]);
     } catch (error) {
       console.error(error);
