@@ -1,11 +1,46 @@
+import { useState } from "react";
+import isInGroup from "../utils/isInGroup";
 import { SolvedWallProps } from "./SolvedWallProps";
 
 export default function SolvedWall({
   correctClues,
   groups,
 }: SolvedWallProps): JSX.Element {
+  const [buttonText1, setButtonText1] = useState<string>("Reveal");
+  const [buttonText2, setButtonText2] = useState<string>("Reveal");
+  const [buttonText3, setButtonText3] = useState<string>("Reveal");
+  const [buttonText4, setButtonText4] = useState<string>("Reveal");
+
   const connections = groups.map((group) => group.connection);
   console.log(connections);
+
+  function handle1Click() {
+    const group = isInGroup(correctClues[0], groups);
+    if (group) {
+      setButtonText1(connections[group - 1]);
+    }
+  }
+
+  function handle2Click() {
+    const group = isInGroup(correctClues[4], groups);
+    if (group) {
+      setButtonText2(connections[group - 1]);
+    }
+  }
+
+  function handle3Click() {
+    const group = isInGroup(correctClues[8], groups);
+    if (group) {
+      setButtonText3(connections[group - 1]);
+    }
+  }
+
+  function handle4Click() {
+    const group = isInGroup(correctClues[12], groups);
+    if (group) {
+      setButtonText4(connections[group - 1]);
+    }
+  }
 
   return (
     <>
@@ -34,14 +69,67 @@ export default function SolvedWall({
           </div>
         </div>
         <div className="connections-container">
-          {[1, 2, 3, 4].map((element) => (
-            <div key={element}>
-              <label>
-                Enter connection {element}:
-                <input />
-              </label>
-            </div>
-          ))}
+          <div>
+            <h3>Click to reveal the connections</h3>
+            <button
+              onClick={handle1Click}
+              style={{
+                fontSize: "medium",
+                backgroundColor: "#D3D3D3",
+                padding: "10px",
+                width: "110px",
+                height: "60px",
+                border: "1px solid",
+              }}
+            >
+              {buttonText1}
+            </button>
+          </div>
+          <div>
+            <button
+              onClick={handle2Click}
+              style={{
+                fontSize: "medium",
+                backgroundColor: "#D3D3D3",
+                padding: "10px",
+                width: "110px",
+                height: "60px",
+                border: "1px solid",
+              }}
+            >
+              {buttonText2}
+            </button>
+          </div>
+          <div>
+            <button
+              onClick={handle3Click}
+              style={{
+                fontSize: "medium",
+                backgroundColor: "#D3D3D3",
+                padding: "10px",
+                width: "110px",
+                height: "60px",
+                border: "1px solid",
+              }}
+            >
+              {buttonText3}
+            </button>
+          </div>
+          <div>
+            <button
+              onClick={handle4Click}
+              style={{
+                fontSize: "medium",
+                backgroundColor: "#D3D3D3",
+                padding: "10px",
+                width: "110px",
+                height: "60px",
+                border: "1px solid",
+              }}
+            >
+              {buttonText4}
+            </button>
+          </div>
         </div>
       </div>
     </>
