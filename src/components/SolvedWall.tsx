@@ -72,21 +72,26 @@ export default function SolvedWall({
             <div className="reveal-buttons">
               <div>
                 <h3>Click to reveal the connections</h3>
-                <button
-                  onClick={handle1Click}
-                  style={{
-                    fontSize: "medium",
-                    backgroundColor: "#D3D3D3",
-                    padding: "10px",
-                    width: "110px",
-                    height: "60px",
-                    border: "1px solid",
-                  }}
-                >
-                  {buttonText1}
-                </button>
+                <div>
+                  <p>Connection 1:</p>
+                  <button
+                    className="button-inline"
+                    onClick={handle1Click}
+                    style={{
+                      fontSize: "medium",
+                      backgroundColor: "#D3D3D3",
+                      padding: "10px",
+                      width: "110px",
+                      height: "60px",
+                      border: "1px solid",
+                    }}
+                  >
+                    {buttonText1}
+                  </button>
+                </div>
               </div>
               <div>
+                <p>Connection 2:</p>
                 <button
                   onClick={handle2Click}
                   style={{
@@ -102,6 +107,7 @@ export default function SolvedWall({
                 </button>
               </div>
               <div>
+                <p>Connection 3:</p>
                 <button
                   onClick={handle3Click}
                   style={{
@@ -117,6 +123,7 @@ export default function SolvedWall({
                 </button>
               </div>
               <div>
+                <p>Connection 4:</p>
                 <button
                   onClick={handle4Click}
                   style={{
