@@ -13,7 +13,7 @@ body {
 .game-container {
   display: grid;
   margin: auto;
-  padding: 100px 0;
+  padding: 40px 0;
   color: rgb(143, 184, 231);
   background-color: #1b2e63;
   padding-bottom: 20px;
@@ -48,4 +48,10 @@ body {
 h3 {
   align-items: center;
   justify-content: center;
+}
+
+.reveal-buttons {
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
 }

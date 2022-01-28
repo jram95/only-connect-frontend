@@ -67,68 +67,71 @@ export default function SolvedWall({
               </div>
             ))}
           </div>
-        </div>
-        <div className="connections-container">
-          <div>
-            <h3>Click to reveal the connections</h3>
-            <button
-              onClick={handle1Click}
-              style={{
-                fontSize: "medium",
-                backgroundColor: "#D3D3D3",
-                padding: "10px",
-                width: "110px",
-                height: "60px",
-                border: "1px solid",
-              }}
-            >
-              {buttonText1}
-            </button>
-          </div>
-          <div>
-            <button
-              onClick={handle2Click}
-              style={{
-                fontSize: "medium",
-                backgroundColor: "#D3D3D3",
-                padding: "10px",
-                width: "110px",
-                height: "60px",
-                border: "1px solid",
-              }}
-            >
-              {buttonText2}
-            </button>
-          </div>
-          <div>
-            <button
-              onClick={handle3Click}
-              style={{
-                fontSize: "medium",
-                backgroundColor: "#D3D3D3",
-                padding: "10px",
-                width: "110px",
-                height: "60px",
-                border: "1px solid",
-              }}
-            >
-              {buttonText3}
-            </button>
-          </div>
-          <div>
-            <button
-              onClick={handle4Click}
-              style={{
-                fontSize: "medium",
-                backgroundColor: "#D3D3D3",
-                padding: "10px",
-                width: "110px",
-                height: "60px",
-                border: "1px solid",
-              }}
-            >
-              {buttonText4}
-            </button>
+
+          <div className="connections-container">
+            <div className="reveal-buttons">
+              <div>
+                <h3>Click to reveal the connections</h3>
+                <button
+                  onClick={handle1Click}
+                  style={{
+                    fontSize: "medium",
+                    backgroundColor: "#D3D3D3",
+                    padding: "10px",
+                    width: "110px",
+                    height: "60px",
+                    border: "1px solid",
+                  }}
+                >
+                  {buttonText1}
+                </button>
+              </div>
+              <div>
+                <button
+                  onClick={handle2Click}
+                  style={{
+                    fontSize: "medium",
+                    backgroundColor: "#D3D3D3",
+                    padding: "10px",
+                    width: "110px",
+                    height: "60px",
+                    border: "1px solid",
+                  }}
+                >
+                  {buttonText2}
+                </button>
+              </div>
+              <div>
+                <button
+                  onClick={handle3Click}
+                  style={{
+                    fontSize: "medium",
+                    backgroundColor: "#D3D3D3",
+                    padding: "10px",
+                    width: "110px",
+                    height: "60px",
+                    border: "1px solid",
+                  }}
+                >
+                  {buttonText3}
+                </button>
+              </div>
+              <div>
+                <button
+                  onClick={handle4Click}
+                  style={{
+                    fontSize: "medium",
+                    backgroundColor: "#D3D3D3",
+                    padding: "10px",
+                    width: "110px",
+                    height: "60px",
+                    border: "1px solid",
+                  }}
+                >
+                  {buttonText4}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
