@@ -2,7 +2,6 @@ import CluesProps from "./CluesProps";
 import shuffle from "../utils/shuffle";
 import hasSameGroup from "../utils/hasSameGroup";
 import { useEffect, useState } from "react";
-import Buttons from "./Buttons";
 import removeClues from "../utils/removeClues";
 import SquaresAndButtons from "./SquaresAndButtons";
 import SolvedWall from "./SolvedWall";
@@ -180,12 +179,6 @@ export default function DisplayGrid({
     <>
       {correctClues.length === 16 ? (
         <SolvedWall correctClues={correctClues} groups={groups} />
-      ) : shuffledClues.length === 0 ? (
-        <Buttons
-          shuffledClues={shuffledClues}
-          setSelectedClues={setSelectedClues}
-          selectedClues={selectedClues}
-        />
       ) : (
         <SquaresAndButtons
           setSelectedClues={setSelectedClues}
