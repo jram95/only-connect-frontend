@@ -1,5 +1,4 @@
 // import { useState } from "react";
-import { useEffect, useState } from "react";
 import { ButtonsProps } from "./ButtonsProps";
 
 export default function Buttons({
