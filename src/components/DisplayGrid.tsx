@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import removeClues from "../utils/removeClues";
 import SquaresAndButtons from "./SquaresAndButtons";
 import SolvedWall from "./SolvedWall";
+import wrong from "../sounds/wrong.mp3";
+import correct from "../sounds/correct.mp3";
+import { useSound } from "use-sound";
 
 export default function DisplayGrid({
   id,
@@ -38,6 +41,8 @@ export default function DisplayGrid({
   const [shuffledClues, setShuffledClues] = useState<string[]>([]);
   const [selectedClues, setSelectedClues] = useState<string[]>([]);
   const [correctClues, setCorrectClues] = useState<string[]>([]);
+  const [playWrong] = useSound(wrong);
+  const [playRight] = useSound(correct);
 
   const groups = [
     {
@@ -90,23 +95,27 @@ export default function DisplayGrid({
       hasSameGroup(selectedClues, groups) === false
     ) {
       setSelectedClues([]);
+      playWrong();
     }
     if (
       selectedClues.length === 4 &&
       hasSameGroup(selectedClues, groups) === true
     ) {
+      playRight();
       setShuffledClues(shuffle(removeClues(selectedClues, shuffledClues)));
       if (correctClues.length === 0) {
         setCorrectClues(selectedClues);
+      } else if (correctClues.length === 12) {
+        console.log("correctClues has length 12");
+        setCorrectClues([...correctClues, ...shuffledClues]);
       } else {
         setCorrectClues([...correctClues, ...selectedClues]);
       }
       setSelectedClues([]);
-      if (correctClues.length === 12) {
-        setCorrectClues([...correctClues, ...shuffledClues]);
-      }
     }
   }, [
+    playRight,
+    playWrong,
     correctClues,
     shuffledClues,
     selectedClues,
