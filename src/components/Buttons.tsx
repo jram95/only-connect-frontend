@@ -14,11 +14,7 @@ export default function Buttons({
       setSelectedClues([clue]);
     } else {
       if (selectedClues.includes(clue)) {
-        setSelectedClues(
-          selectedClues.filter((item) => {
-            item !== clue;
-          })
-        );
+        setSelectedClues(selectedClues.filter((item) => item !== clue));
       } else {
         setSelectedClues([...selectedClues, clue]);
       }
