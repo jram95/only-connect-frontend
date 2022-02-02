@@ -14,7 +14,11 @@ export default function Buttons({
       setSelectedClues([clue]);
     } else {
       if (selectedClues.includes(clue)) {
-        console.log("It has been selected twice");
+        setSelectedClues(
+          selectedClues.filter((item) => {
+            item !== clue;
+          })
+        );
       } else {
         setSelectedClues([...selectedClues, clue]);
       }
