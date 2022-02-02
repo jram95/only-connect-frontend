@@ -13,9 +13,14 @@ export default function Buttons({
     if (selectedClues.length === 0) {
       setSelectedClues([clue]);
     } else {
-      setSelectedClues([...selectedClues, clue]);
+      if (selectedClues.includes(clue)) {
+        setSelectedClues(selectedClues.filter((item) => item !== clue));
+      } else {
+        setSelectedClues([...selectedClues, clue]);
+      }
     }
   }
+
   return (
     <>
       <div className="game-container">
