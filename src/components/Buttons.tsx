@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ButtonsProps } from "./ButtonsProps";
 
 export default function Buttons({
@@ -13,9 +14,14 @@ export default function Buttons({
     if (selectedClues.length === 0) {
       setSelectedClues([clue]);
     } else {
-      setSelectedClues([...selectedClues, clue]);
+      if (selectedClues.includes(clue)) {
+        console.log("It has been selected twice");
+      } else {
+        setSelectedClues([...selectedClues, clue]);
+      }
     }
   }
+
   return (
     <>
       <div className="game-container">
