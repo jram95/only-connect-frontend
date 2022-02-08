@@ -1,7 +1,9 @@
 export default function Rules(): JSX.Element {
   return (
     <>
-      <h1>The Rules</h1>
+      <div className="rules-box">
+        <h1>The Rules</h1>
+      </div>
     </>
   );
 }
