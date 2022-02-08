@@ -1,4 +1,4 @@
-import FetchClues from "./components/FetchClues";
+import FetchClues from "./components/IndividuWall/FetchClues";
 
 function App(): JSX.Element {
   return <FetchClues />;

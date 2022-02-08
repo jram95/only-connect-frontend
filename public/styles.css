@@ -1,5 +1,6 @@
 body {
   background-color: #1b2e63;
+  font-family: sans-serif;
 }
 
 .wall-title {
@@ -54,4 +55,39 @@ h3 {
   align-items: center;
   justify-content: center;
   font-family: sans-serif;
+}
+
+.rules-box {
+  text-align: center;
+  padding: 1em;
+  border: 0.2em solid rgb(112, 62, 62);
+}
+
+.header {
+  width: 100%;
+  border-bottom: 1px solid black;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  text-align: left;
+  position: top;
+  top: 0;
+  left: 0;
+  font-size: 28px;
+  font-weight: 100;
+  padding: 10px;
+  border: 2px solid rgb(70, 68, 68);
+  border-radius: 20px;
+}
+
+.link {
+  display: inline-block;
+  padding-top: 10px;
+  padding: 1px 0;
+  margin: 10px 150px;
+  color: #0f0f0f;
+  font-weight: 500;
+  font-size: 18px;
 }
