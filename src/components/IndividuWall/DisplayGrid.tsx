@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import removeClues from "../../utils/removeClues";
 import SquaresAndButtons from "./SquaresAndButtons";
 import SolvedWall from "./SolvedWall";
-import wrong from "../sounds/wrong.mp3";
-import correct from "../sounds/correct.mp3";
+import wrong from "../../sounds/wrong.mp3";
+import correct from "../../sounds/correct.mp3";
 import { useSound } from "use-sound";
 
 export default function DisplayGrid({
