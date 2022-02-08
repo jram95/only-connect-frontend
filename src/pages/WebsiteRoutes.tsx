@@ -13,9 +13,11 @@ export default function WebsiteRoutes(): JSX.Element {
   return (
     <>
       <Router>
-        <Route path="/" element={<Home />} />
-        <Route path="/connecting-wall" element={<IndividuWall />} />
-        <Route path="/new-wall" element={<NewWall />} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/connecting-wall" element={<IndividuWall />} />
+          <Route path="/new-wall" element={<NewWall />} />
+        </Routes>
       </Router>
     </>
   );
