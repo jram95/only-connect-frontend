@@ -1,8 +1,8 @@
 import CluesProps from "./CluesProps";
-import shuffle from "../utils/shuffle";
-import hasSameGroup from "../utils/hasSameGroup";
+import shuffle from "../../utils/shuffle";
+import hasSameGroup from "../../utils/hasSameGroup";
 import { useEffect, useState } from "react";
-import removeClues from "../utils/removeClues";
+import removeClues from "../../utils/removeClues";
 import SquaresAndButtons from "./SquaresAndButtons";
 import SolvedWall from "./SolvedWall";
 import wrong from "../sounds/wrong.mp3";

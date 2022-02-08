@@ -1,5 +1,5 @@
 import { useState } from "react";
-import isInGroup from "../utils/isInGroup";
+import isInGroup from "../../utils/isInGroup";
 import { SolvedWallProps } from "./SolvedWallProps";
 
 export default function SolvedWall({
