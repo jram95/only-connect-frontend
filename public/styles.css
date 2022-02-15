@@ -1,5 +1,5 @@
 body {
-  background-color: #1b2e63;
+  background-color: #2b458f;
   font-family: sans-serif;
 }
 
@@ -16,7 +16,7 @@ body {
   margin: auto;
   padding: 40px 0;
   color: rgb(143, 184, 231);
-  background-color: #1b2e63;
+  background-color: #2b458f;
   padding-bottom: 20px;
 }
 
@@ -60,7 +60,7 @@ h3 {
 .rules-box {
   text-align: center;
   padding: 1em;
-  border: 0.2em solid rgb(112, 62, 62);
+  border: 0.2em solid rgb(182, 89, 89);
 }
 
 .header {
@@ -95,4 +95,22 @@ h3 {
 .points {
   text-align: center;
   justify-content: center;
+}
+
+.container {
+  margin: auto;
+  padding: 10px 0;
+}
+.row {
+  height: 90px;
+  padding: 10px 0;
+}
+
+.col {
+  padding-right: 10px 0;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: black;
+  background-color: rgb(130, 164, 228);
+  color: black;
 }

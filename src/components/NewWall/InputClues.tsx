@@ -6,12 +6,34 @@ export default function InputClues(): JSX.Element {
   }
   return (
     <>
-      <div className="form">
-        <input placeholder="clue" onChange={(e) => handleInputClue(e)} />
-        <input placeholder="clue" onChange={(e) => handleInputClue(e)} />
-        <input placeholder="clue" onChange={(e) => handleInputClue(e)} />
-        <input placeholder="clue" onChange={(e) => handleInputClue(e)} />
-        <input placeholder="connection" onChange={(e) => handleInputClue(e)} />
+      <div className="container">
+        <div className="row">
+          <input
+            className="col"
+            placeholder="clue"
+            onChange={(e) => handleInputClue(e)}
+          />
+          <input
+            className="col"
+            placeholder="clue"
+            onChange={(e) => handleInputClue(e)}
+          />
+          <input
+            className="col"
+            placeholder="clue"
+            onChange={(e) => handleInputClue(e)}
+          />
+          <input
+            className="col"
+            placeholder="clue"
+            onChange={(e) => handleInputClue(e)}
+          />
+          <input
+            className="col"
+            placeholder="connection"
+            onChange={(e) => handleInputClue(e)}
+          />
+        </div>
       </div>
     </>
   );
