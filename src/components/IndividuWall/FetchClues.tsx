@@ -10,19 +10,18 @@ export default function FetchClues(): JSX.Element {
 
   const [wall, getWall] = useState<CluesProps>();
   useEffect(() => {
-    getClues();
-  }, [getClues]);
-
-  async function getClues() {
-    try {
-      const response = await axios.get(
-        `https://wall-game.herokuapp.com/wall/${clue_id}`
-      );
-      getWall(response.data.clues[0]);
-    } catch (error) {
-      console.error(error);
+    async function getClues() {
+      try {
+        const response = await axios.get(
+          `https://wall-game.herokuapp.com/wall/${clue_id}`
+        );
+        getWall(response.data.clues[0]);
+      } catch (error) {
+        console.error(error);
+      }
     }
-  }
+    getClues();
+  }, [clue_id]);
 
   return (
     <>
