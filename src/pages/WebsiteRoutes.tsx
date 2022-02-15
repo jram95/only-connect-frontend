@@ -9,7 +9,7 @@ export default function WebsiteRoutes(): JSX.Element {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/connecting-wall" element={<IndividuWall />} />
+          <Route path="/connecting-wall/:id" element={<IndividuWall />} />
           <Route path="/new-wall" element={<NewWall />} />
         </Routes>
       </Router>

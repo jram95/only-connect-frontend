@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import CluesProps from "./CluesProps";
 import DisplayGrid from "./DisplayGrid";
-
-const clue_id = 2;
+import { useParams } from "react-router-dom";
 
 export default function FetchClues(): JSX.Element {
+  const params = useParams();
+  const clue_id = params.id;
+
   const [wall, getWall] = useState<CluesProps>();
   useEffect(() => {
     getClues();
-  }, []);
+  }, [getClues]);
 
   async function getClues() {
     try {
