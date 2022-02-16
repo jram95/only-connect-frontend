@@ -17,7 +17,7 @@ export default function CreateWall(): JSX.Element {
   const [success, setSuccess] = useState<boolean>(false);
 
   async function handleCreateWall() {
-    const response = await axios.post("http://localhost:4000/wall", {
+    const response = await axios.post("https://wall-game.herokuapp.com/wall", {
       username: username,
       clue11: userWall[0][0],
       clue12: userWall[0][1],
