@@ -1,12 +1,11 @@
 body {
-  background-color: #2b458f;
-  font-family: sans-serif;
+  background-color: #a5beda;
+  font-family: "Inter", sans-serif;
 }
 
 .wall-title {
   margin: auto;
   padding: 13px;
-  font-family: sans-serif;
   font-weight: 400;
   font-style: bold;
 }
@@ -15,8 +14,8 @@ body {
   display: grid;
   margin: auto;
   padding: 40px 0;
-  color: rgb(143, 184, 231);
-  background-color: #2b458f;
+  color: rgb(45, 77, 114);
+  background-color: #a5beda;
   padding-bottom: 20px;
 }
 
@@ -59,15 +58,21 @@ h3 {
 
 .rules-box {
   text-align: center;
-  padding: 1em;
-  border: 0.2em solid rgb(182, 89, 89);
+  padding: 30px;
+  border: 1.5em solid rgb(218, 215, 176);
+  color: black;
+
+  border-bottom: 2em solid rgb(218, 215, 176);
 }
 
 .header {
   width: 100%;
-  border-bottom: 1px solid black;
   text-align: center;
   position: relative;
+}
+
+.menu {
+  background-color: rgb(218, 215, 176);
 }
 
 .logo {
@@ -78,18 +83,22 @@ h3 {
   font-size: 28px;
   font-weight: 100;
   padding: 10px;
-  border: 2px solid rgb(70, 68, 68);
-  border-radius: 20px;
+  border-bottom: 0.5em solid rgb(218, 215, 176);
+  font-family: "Alegreya Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
+  font-style: italic;
+  font-weight: bolder;
 }
 
 .link {
   display: inline-block;
-  padding-top: 10px;
-  padding: 1px 0;
   margin: 10px 150px;
   color: #0f0f0f;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
 }
 
 .points {
@@ -122,4 +131,28 @@ h3 {
   font-size: large;
   justify-content: center;
   padding-top: 10px;
+}
+
+.most-recent {
+  text-align: center;
+  padding: 50px;
+  border: 1.5em solid rgb(218, 215, 176);
+  color: black;
+}
+
+.top-padding {
+  padding-top: 50px;
+}
+
+.title-padding {
+  padding-bottom: 20px;
+}
+
+.top-left-padding {
+  padding-left: 140px;
+  padding-top: 50px;
+}
+
+.button-padding {
+  padding-left: 500px;
 }
