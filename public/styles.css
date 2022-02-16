@@ -98,19 +98,28 @@ h3 {
 }
 
 .container {
-  margin: auto;
-  padding: 10px 0;
-}
-.row {
-  height: 90px;
-  padding: 10px 0;
+  padding-top: 40px;
+  width: 75%;
 }
 
-.col {
-  padding-right: 10px 0;
+.row {
+  height: 45px;
+}
+
+.input-tile {
+  height: 45px;
   border-radius: 5px;
-  border-width: 2px;
-  border-color: black;
   background-color: rgb(130, 164, 228);
-  color: black;
+  width: 121px;
+  text-align: center;
+}
+
+.rules-box .group-name {
+  align-items: left;
+}
+
+.group-number {
+  font-size: large;
+  justify-content: center;
+  padding-top: 10px;
 }
