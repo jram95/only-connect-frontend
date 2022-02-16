@@ -2,7 +2,7 @@ export default function Rules(): JSX.Element {
   return (
     <>
       <div className="rules-box">
-        <h1>The Rules</h1>
+        <h1 className="title-padding">The Rules</h1>
         <p>Welcome to the connecting wall, of Only Connect fame. </p>
         <p>
           Each wall contains 16 clues; to solve the wall, the player has to
@@ -11,7 +11,7 @@ export default function Rules(): JSX.Element {
           category. The player has 3 minutes to solve the wall, after which time
           the wall automatically reveals the correct four groups.
         </p>
-        <h4>Points system</h4>
+        <h4 style={{ padding: "15px" }}>Points system</h4>
         <p>
           Once the game is over, the player can tally up the points:{" "}
           <ul className="points">

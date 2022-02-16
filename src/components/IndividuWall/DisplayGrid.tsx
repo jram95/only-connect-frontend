@@ -8,6 +8,8 @@ import SolvedWall from "./SolvedWall";
 import wrong from "../../sounds/wrong.mp3";
 import correct from "../../sounds/correct.mp3";
 import { useSound } from "use-sound";
+import { linkStyle } from "../linkStyle";
+import { Link } from "react-router-dom";
 
 export default function DisplayGrid({
   id,
@@ -196,7 +198,12 @@ export default function DisplayGrid({
           correctClues={correctClues}
         />
       )}
-      <p>
+      <div className="wall-title">
+        <Link to="/" style={linkStyle}>
+          Go back to homepage
+        </Link>
+      </div>
+      <p className="top-padding">
         Submitted by {user} at {submit_time}
       </p>
     </>
