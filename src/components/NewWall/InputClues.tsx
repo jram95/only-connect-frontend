@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent } from "react";
 
 export default function InputClues(props: {
   number: number;
@@ -14,10 +14,6 @@ export default function InputClues(props: {
     newWall[row][column] = e.target.value;
     props.setUserWall(newWall);
   }
-
-  useEffect(() => {
-    console.log(props.userWall);
-  }, [props.userWall]);
 
   return (
     <>
