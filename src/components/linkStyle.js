@@ -6,4 +6,5 @@ export const linkStyle = {
   padding: "10px",
   border: "1px solid",
   borderRadius: "5px",
+  backgroundColor: "white",
 };

@@ -59,10 +59,10 @@ h3 {
 .rules-box {
   text-align: center;
   padding: 30px;
-  border: 1.5em solid rgb(218, 215, 176);
+  border: 1.5em solid rgb(238, 234, 177);
   color: black;
 
-  border-bottom: 2em solid rgb(218, 215, 176);
+  border-bottom: 2em solid rgb(238, 234, 177);
 }
 
 .header {
@@ -117,8 +117,8 @@ h3 {
 
 .input-tile {
   height: 45px;
-  border-radius: 5px;
-  background-color: rgb(130, 164, 228);
+  border-radius: 4px;
+  background-color: rgb(153, 174, 238);
   width: 121px;
   text-align: center;
 }
@@ -136,7 +136,7 @@ h3 {
 .most-recent {
   text-align: center;
   padding: 50px;
-  border: 1.5em solid rgb(218, 215, 176);
+  border: 1.5em solid rgb(238, 234, 177);
   color: black;
 }
 
@@ -149,7 +149,7 @@ h3 {
 }
 
 .top-left-padding {
-  padding-left: 140px;
+  padding-left: 185px;
   padding-top: 50px;
 }
 
