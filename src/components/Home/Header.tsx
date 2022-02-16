@@ -4,14 +4,14 @@ export default function Header(): JSX.Element {
   return (
     <>
       <div className="header">
-        <div className="logo">Connecting Wall</div>
+        <div className="logo">The Connecting Wall</div>
         <div className="menu">
           <Link to="/" className="link">
-            <div className="title">View List</div>
+            <div className="title">VIEW LIST</div>
             <div className="bar"></div>
           </Link>
           <Link to="/new-wall" className="link">
-            <div className="title">Create a wall</div>
+            <div className="title">CREATE A WALL</div>
             <div className="bar"></div>
           </Link>
         </div>

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CluesProps from "../IndividuWall/CluesProps";
+import { linkStyle } from "../linkStyle";
 
 export default function RecentWalls(): JSX.Element {
   const [recentWalls, setRecentWalls] = useState<CluesProps[]>([]);
@@ -21,14 +22,20 @@ export default function RecentWalls(): JSX.Element {
 
   return (
     <>
-      <p>Most recent</p>
-      <p>
-        {recentWalls.map((item) => (
-          <Link to={`/connecting-wall/${item.id}`} key={item.id}>
-            Wall {item.id}
-          </Link>
-        ))}
-      </p>
+      <div className="rules-box">
+        <h3 className="title-padding">Most recent walls</h3>
+        <p>
+          {recentWalls.map((item) => (
+            <Link
+              to={`/connecting-wall/${item.id}`}
+              key={item.id}
+              style={linkStyle}
+            >
+              Wall {item.id}
+            </Link>
+          ))}
+        </p>
+      </div>
     </>
   );
 }
