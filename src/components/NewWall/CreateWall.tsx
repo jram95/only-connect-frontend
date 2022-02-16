@@ -86,6 +86,9 @@ export default function CreateWall(): JSX.Element {
             >
               Generate Wall
             </button>
+            <Link to="/" style={linkStyle}>
+              Go to homepage
+            </Link>
           </div>
         </div>
       )}
