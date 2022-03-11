@@ -12,7 +12,6 @@ export default function isInGroup(
 }
 
 export interface GroupsProps {
-  explanation: string;
   connection: string;
   clues: string[];
 }

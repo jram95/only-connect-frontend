@@ -5,6 +5,5 @@ export interface SolvedWallProps {
 
 interface Groups {
   connection: string;
-  explanation: string;
   clues: string[];
 }
