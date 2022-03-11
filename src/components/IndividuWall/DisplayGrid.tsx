@@ -10,6 +10,7 @@ import correct from "../../sounds/correct.mp3";
 import { useSound } from "use-sound";
 import { linkStyle } from "../linkStyle";
 import { Link } from "react-router-dom";
+import Timer from "./Timer";
 
 export default function DisplayGrid({
   id,
@@ -45,6 +46,22 @@ export default function DisplayGrid({
   const [correctClues, setCorrectClues] = useState<string[]>([]);
   const [playWrong] = useSound(wrong);
   const [playRight] = useSound(correct);
+  const [timer, setTimer] = useState<number>(0);
+  const [mins, setMins] = useState<number>(0);
+  const [secs, setSecs] = useState<number>(0);
+
+  useEffect(() => {
+    const timeInMins = Math.floor(timer / 60);
+    setMins(timeInMins);
+    const timeInSecs = timer - timeInMins * 60;
+    setSecs(timeInSecs);
+  }, [timer]);
+
+  function displaySeconds(timeInSecs: number) {
+    if (timeInSecs < 10) {
+      return `0${timeInSecs.toString()}`;
+    }
+  }
 
   const groups = [
     {
@@ -188,6 +205,10 @@ export default function DisplayGrid({
 
   return (
     <>
+      <Timer setTimer={setTimer} />
+      <div>
+        {mins}:{secs}
+      </div>
       {correctClues.length === 16 ? (
         <SolvedWall correctClues={correctClues} groups={groups} />
       ) : (
