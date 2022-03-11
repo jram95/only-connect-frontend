@@ -35,25 +35,21 @@ export default function FetchClues(): JSX.Element {
           clue13={wall.clue13}
           clue14={wall.clue14}
           connection1={wall.connection1}
-          explanation1={wall.explanation1}
           clue21={wall.clue21}
           clue22={wall.clue22}
           clue23={wall.clue23}
           clue24={wall.clue24}
           connection2={wall.connection2}
-          explanation2={wall.explanation2}
           clue31={wall.clue31}
           clue32={wall.clue32}
           clue33={wall.clue33}
           clue34={wall.clue34}
           connection3={wall.connection3}
-          explanation3={wall.explanation3}
           clue41={wall.clue41}
           clue42={wall.clue42}
           clue43={wall.clue43}
           clue44={wall.clue44}
           connection4={wall.connection4}
-          explanation4={wall.explanation4}
         />
       )}
     </>
