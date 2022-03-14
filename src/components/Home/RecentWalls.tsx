@@ -26,13 +26,12 @@ export default function RecentWalls(): JSX.Element {
         <h3 className="title-padding">Most recent walls</h3>
         <p>
           {recentWalls.map((item) => (
-            <Link
-              to={`/connecting-wall/${item.id}`}
-              key={item.id}
-              style={linkStyle}
-            >
-              Wall {item.id}
-            </Link>
+            <div key={item.id} style={{ paddingBottom: "20px" }}>
+              <Link to={`/connecting-wall/${item.id}`} style={linkStyle}>
+                Wall {item.id}
+                <br />
+              </Link>
+            </div>
           ))}
         </p>
       </div>
